@@ -10,4 +10,6 @@ import java.util.List;
 public interface PostRepository extends JpaRepository<PostEntity,Long> {
     List<PostEntity> findByConcept(String concept);
 
+    PostEntity findByPostId(Long postId);
+
 }

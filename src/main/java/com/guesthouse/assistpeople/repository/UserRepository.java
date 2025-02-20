@@ -33,4 +33,5 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
             @Param("userPic") String userPic,
             @Param("id") String id
     );
+
 }

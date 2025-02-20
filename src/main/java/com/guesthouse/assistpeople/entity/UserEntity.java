@@ -1,14 +1,11 @@
 package com.guesthouse.assistpeople.entity;
 
 import com.guesthouse.assistpeople.dto.UserDTO;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.*;
-import jakarta.persistence.Id;
+import org.aspectj.bridge.Message;
 
-
+import java.util.List;
 
 
 @Entity
@@ -31,6 +28,11 @@ public class UserEntity {
 
         private String Role;
 
+        @OneToMany(mappedBy = "messageId",cascade = CascadeType.ALL,orphanRemoval = true)
+        private List<MessageEntity> messageEntities ;
+
+        @OneToMany(mappedBy = "postId",cascade = CascadeType.ALL,orphanRemoval = true)
+        private List<PostEntity> postEntities;
 
 
 

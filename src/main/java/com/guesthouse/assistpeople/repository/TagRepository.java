@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface TagRepository extends JpaRepository<TagEntity, Long> {
     List<TagEntity> findByPostPostId(Long PostId);
+
 }

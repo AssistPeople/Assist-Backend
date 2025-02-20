@@ -28,4 +28,9 @@ public class PostEntity {
     @OneToMany(mappedBy = "tag",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<TagEntity> tagEntities;
 
+    // 채팅방 id
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private UserEntity user ;
+
 }

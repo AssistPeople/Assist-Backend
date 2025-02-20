@@ -1,5 +1,6 @@
 package com.guesthouse.assistpeople.service;
 
+import com.guesthouse.assistpeople.dto.LoginDTO;
 import com.guesthouse.assistpeople.dto.UserDTO;
 import com.guesthouse.assistpeople.entity.PostEntity;
 import com.guesthouse.assistpeople.entity.UserEntity;
@@ -18,9 +19,14 @@ import java.util.List;
 public class PostService {
 
     private final PostRepository postRepository;
-    private final TagRepository tagRepository;
+
     public  List<PostEntity> getPost(String contect) {
         return postRepository.findByConcept(contect);
+
+    }
+
+    public  PostEntity getOnePost(Long postId) {
+        return postRepository.findByPostId(postId);
 
     }
 }
