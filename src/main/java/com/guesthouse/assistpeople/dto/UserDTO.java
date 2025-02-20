@@ -1,13 +1,14 @@
 package com.guesthouse.assistpeople.dto;
 
+import com.guesthouse.assistpeople.entity.UserEntity;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
+@Getter
+@Setter
 public class UserDTO {
         private Long userId;
         @NotBlank(message = "이름을 입력해주세요")
@@ -20,15 +21,15 @@ public class UserDTO {
 
 
 
-//        public static UserDTO toDto(UserVO member) {
-//            return new UserDTO(
-//                    member.getUserId(),
-//                    member.getUserName(),
-//                    member.getId(),
-//                    member.getPassword(),
-//                    member.getRole()
-//            );
-//        }
+        public static UserDTO toDto(UserEntity member) {
+            return new UserDTO(
+                    member.getUserId(),
+                    member.getNickName(),
+                    member.getId(),
+                    member.getPassword(),
+                    member.getRole()
+            );
+        }
 }
 
 

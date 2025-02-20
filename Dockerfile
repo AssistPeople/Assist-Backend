@@ -13,7 +13,7 @@ RUN echo "systemProp.http.proxyHost=krmp-proxy.9rum.cc\nsystemProp.http.proxyPor
 RUN ./gradlew clean build
 
 # DATABASE_URL을 환경 변수로 삽입
-ENV DATABASE_URL=jdbc:mysql://mysql:3306/AssistPeople?useSSL=false&serverTimezone=UTC
+ENV DATABASE_URL=jdbc:mysql:jdbc:mysql://mysql:3306/AssistPeople?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
 
 
 # 빌드 결과 jar 파일을 실행

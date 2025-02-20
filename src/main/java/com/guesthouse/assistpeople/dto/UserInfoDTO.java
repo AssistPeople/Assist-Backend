@@ -9,7 +9,11 @@ import lombok.*;
 @NoArgsConstructor
 public class UserInfoDTO {
     private Long userId;
-    private String userName;
+    private String introduce;
+    private String appeal;
+    private String mbit;
+    private String nickName;
+    private String reason;
+    private String userPic;
     private String id;
-
 }
